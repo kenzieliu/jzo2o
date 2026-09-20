@@ -1,4 +1,4 @@
-# 家服通 - jzo2o
+# 家服通 - jfo2o
 
 ## 项目简介
 
@@ -61,45 +61,45 @@ graph LR
 ## 项目结构
 
 ```plaintext
-jzo2o/
-├── jzo2o-api/                    # API 接口定义模块（Feign 接口 + DTO 传输对象）
-│   └── src/main/java/com/jzo2o/api/
+jfo2o/
+├── jfo2o-api/                    # API 接口定义模块（Feign 接口 + DTO 传输对象）
+│   └── src/main/java/com/jfo2o/api/
 │       ├── market/               # 营销模块 API（优惠券、秒杀活动）
 │       ├── orders/               # 订单模块 API（下单、派单、抢单、状态流转）
 │       ├── publics/              # 公共服务 API（短信、文件上传、消息推送）
 │       └── trade/                # 支付模块 API（微信支付、退款、账单）
-├── jzo2o-customer/               # 客户服务模块（用户注册登录、个人信息、地址管理）
+├── jfo2o-customer/               # 客户服务模块（用户注册登录、个人信息、地址管理）
 │   └── src/main/resources/
 │       ├── mapper/               # MyBatis XML 映射文件
 │       └── bootstrap*.yml        # 多环境配置文件
-├── jzo2o-foundations/            # 基础服务模块（服务类目、区域字典、系统参数配置）
+├── jfo2o-foundations/            # 基础服务模块（服务类目、区域字典、系统参数配置）
 │   └── src/main/resources/
 │       ├── mapper/
 │       └── bootstrap*.yml
-├── jzo2o-framework/              # 框架基础设施层（各中间件统一配置与封装）
-│   ├── jzo2o-common/             # 公共工具类、自定义异常、统一响应体封装
-│   ├── jzo2o-mvc/                # Spring MVC 配置、全局异常处理器、参数校验
-│   ├── jzo2o-mysql/              # MyBatis Plus 配置、自动填充（创建/更新时间）
-│   ├── jzo2o-redis/              # Redis 序列化配置、缓存注解、分布式锁工具
-│   ├── jzo2o-rabbitmq/           # RabbitMQ 交换机/队列声明、消息转换器
-│   ├── jzo2o-seata/              # Seata 分布式事务 AT 模式配置
-│   ├── jzo2o-es/                 # Elasticsearch 客户端与索引模板配置
-│   └── jzo2o-sentinel/           # Sentinel 限流/熔断规则持久化配置
-├── jzo2o-gateway/                # 网关服务（路由转发、JWT 鉴权、跨域、请求日志）
+├── jfo2o-framework/              # 框架基础设施层（各中间件统一配置与封装）
+│   ├── jfo2o-common/             # 公共工具类、自定义异常、统一响应体封装
+│   ├── jfo2o-mvc/                # Spring MVC 配置、全局异常处理器、参数校验
+│   ├── jfo2o-mysql/              # MyBatis Plus 配置、自动填充（创建/更新时间）
+│   ├── jfo2o-redis/              # Redis 序列化配置、缓存注解、分布式锁工具
+│   ├── jfo2o-rabbitmq/           # RabbitMQ 交换机/队列声明、消息转换器
+│   ├── jfo2o-seata/              # Seata 分布式事务 AT 模式配置
+│   ├── jfo2o-es/                 # Elasticsearch 客户端与索引模板配置
+│   └── jfo2o-sentinel/           # Sentinel 限流/熔断规则持久化配置
+├── jfo2o-gateway/                # 网关服务（路由转发、JWT 鉴权、跨域、请求日志）
 │   └── src/main/resources/
 │       └── bootstrap*.yml
-├── jzo2o-market/                 # 营销服务模块（优惠券管理、秒杀活动、满减规则）
+├── jfo2o-market/                 # 营销服务模块（优惠券管理、秒杀活动、满减规则）
 │   └── src/main/resources/
 │       ├── mapper/
 │       ├── scripts/              # Redis Lua 脚本（秒杀扣库存）
 │       └── bootstrap*.yml
-├── jzo2o-orders/                 # 订单服务模块（核心业务）
-│   ├── jzo2o-orders-base/        # 订单基础服务（下单、支付回调、状态机流转）
-│   ├── jzo2o-orders-dispatch/    # 订单调度服务（平台智能派单算法）
-│   ├── jzo2o-orders-history/     # 订单历史服务（已完成订单归档与查询）
-│   ├── jzo2o-orders-manager/     # 订单管理服务（运营端订单 CRUD、退款审核）
-│   └── jzo2o-orders-seize/       # 订单抢单服务（服务人员实时抢单）
-└── jzo2o-publics/                # 公共服务模块（短信发送、文件上传、站内消息）
+├── jfo2o-orders/                 # 订单服务模块（核心业务）
+│   ├── jfo2o-orders-base/        # 订单基础服务（下单、支付回调、状态机流转）
+│   ├── jfo2o-orders-dispatch/    # 订单调度服务（平台智能派单算法）
+│   ├── jfo2o-orders-history/     # 订单历史服务（已完成订单归档与查询）
+│   ├── jfo2o-orders-manager/     # 订单管理服务（运营端订单 CRUD、退款审核）
+│   └── jfo2o-orders-seize/       # 订单抢单服务（服务人员实时抢单）
+└── jfo2o-publics/                # 公共服务模块（短信发送、文件上传、站内消息）
     └── src/main/resources/
         └── bootstrap*.yml
 ```
@@ -136,7 +136,7 @@ jzo2o/
 
 启动 Nacos 后，登录控制台进行以下配置：
 
-1. 创建命名空间 `jzo2o-dev`（开发环境）
+1. 创建命名空间 `jfo2o-dev`（开发环境）
 2. 在命名空间下导入各模块的配置文件（Data ID 对应各模块 `bootstrap-dev.yml`）
 3. 确保各模块 `bootstrap-dev.yml` 中的 Nacos 地址指向 `localhost:8848`
 
@@ -153,25 +153,25 @@ mysql -u root -p < sql/init.sql
 
 ```bash
 # 1. 启动网关（需最先启动，承载全局路由）
-cd jzo2o-gateway
+cd jfo2o-gateway
 mvn spring-boot:run -Dspring.profiles.active=dev
 
 # 2. 启动基础服务
-cd ../jzo2o-foundations
+cd ../jfo2o-foundations
 mvn spring-boot:run -Dspring.profiles.active=dev
 
 # 3. 启动公共服务
-cd ../jzo2o-publics
+cd ../jfo2o-publics
 mvn spring-boot:run -Dspring.profiles.active=dev
 
 # 4. 启动业务服务
-cd ../jzo2o-customer
+cd ../jfo2o-customer
 mvn spring-boot:run -Dspring.profiles.active=dev
 
-cd ../jzo2o-market
+cd ../jfo2o-market
 mvn spring-boot:run -Dspring.profiles.active=dev
 
-cd ../jzo2o-orders/jzo2o-orders-manager
+cd ../jfo2o-orders/jfo2o-orders-manager
 mvn spring-boot:run -Dspring.profiles.active=dev
 ```
 
@@ -190,9 +190,9 @@ mvn spring-boot:run -Dspring.profiles.active=dev
 mvn clean package -DskipTests
 
 # 运行打包后的 Jar（指定生产环境）
-java -jar jzo2o-gateway/target/jzo2o-gateway.jar --spring.profiles.active=prod
-java -jar jzo2o-foundations/target/jzo2o-foundations.jar --spring.profiles.active=prod
-java -jar jzo2o-customer/target/jzo2o-customer.jar --spring.profiles.active=prod
+java -jar jfo2o-gateway/target/jfo2o-gateway.jar --spring.profiles.active=prod
+java -jar jfo2o-foundations/target/jfo2o-foundations.jar --spring.profiles.active=prod
+java -jar jfo2o-customer/target/jfo2o-customer.jar --spring.profiles.active=prod
 # ... 同理启动其余模块
 ```
 
@@ -217,7 +217,7 @@ java -jar jzo2o-customer/target/jzo2o-customer.jar --spring.profiles.active=prod
 # 数据库配置
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/jzo2o_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/jfo2o_db?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: admin
     password: password
     hikari:
